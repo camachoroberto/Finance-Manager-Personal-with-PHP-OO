@@ -1,0 +1,44 @@
+INICIAR O PROJETO
+Coneção banco de dados
+$ php -S localhost:8000 -t public
+$ http://localhost:8000/login
+
+Dados de Login
+Login: admin@admin.com
+senha: admin
+
+Para gerar as migrations e Seed
+php migrate-seed.php
+
+    CodeSniffer
+        todos os arquivos
+        $ vendor\bin\phpcs
+
+        verificar um arquivo especifico
+        $ vendor\bin\phpcs .\src\
+
+        gerar um report de erros
+        $ vendor\bin\phpcs --report=summary .\src\
+
+        corrigi automaticamente os erros
+        $ vendor\bin\phpcbf .\src\
+
+
+
+    Migraçoes Seed
+        $ php migrate-seed.php
+
+        Criando migrações
+        $ vendor\bin\phin.bat create CreateBillPaysTable
+        Realizando migração
+        $ vendor/bin/phinx.bat migrate
+        Desfaz migração
+        $ vendor/bin/phinx.bat rollback
+        Desfaz migração específica
+        $ vendor/bin/phinx.bat rollback -t=20181020003203
+        Desfaz todas as migração
+        $ vendor/bin/phinx.bat rollback -t=0
+        cria os Seeds
+        $ vendor/bin/phinx seed:run
+
+

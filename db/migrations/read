@@ -1,0 +1,11 @@
+para gerar as migrations:
+
+$ vendor\bin\phinx.bat create CreateUserTable
+
+para rodar as configurações realizadas para criação de tabela
+
+$ vendor\bin\phinx.bat migrate
+
+logo fazemos rodar as seed para que prencher os registros
+
+$ vendor\bin\phinx.bat seed:run
